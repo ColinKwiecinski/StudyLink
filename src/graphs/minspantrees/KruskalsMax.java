@@ -29,7 +29,7 @@ public class KruskalsMax {
         }
 
         Set<Vertex> added = new HashSet<>();
-        while(finalSet.size() <= graph.getEdges().size() / 2) {
+        while(finalSet.size() <= graph.getEdges().size() / 2 && !list.isEmpty()) {
             Edge e = list.remove(list.size() - 1);
             if(!added.contains(e.getTo()) && !added.contains(e.getFrom())) {
                 finalSet.add(e);
@@ -37,7 +37,6 @@ public class KruskalsMax {
                 added.add(e.getFrom());
             }
         }
-
 
         return finalSet;
     }
