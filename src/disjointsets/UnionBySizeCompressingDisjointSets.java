@@ -5,8 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-public class UnionBySizeCompressingDisjointSets<T> {
+/**
+ * A quick-union-by-size data structure with path compression.
+ * @see DisjointSets for more documentation.
+ */
+public class UnionBySizeCompressingDisjointSets<T> implements DisjointSets<T> {
     // Do NOT rename or delete this field. We will be inspecting it directly in our private tests.
     List<Integer> pointers;
     Map<T, Integer> finder;
@@ -21,11 +24,13 @@ public class UnionBySizeCompressingDisjointSets<T> {
         finder = new HashMap<>();
     }
 
+    @Override
     public void makeSet(T item) {
         finder.put(item, pointers.size());
         pointers.add(-1);
     }
 
+    @Override
     public int findSet(T item) {
         if (!finder.containsKey(item)) {
             throw new IllegalArgumentException();
@@ -47,6 +52,7 @@ public class UnionBySizeCompressingDisjointSets<T> {
         return index;
     }
 
+    @Override
     public boolean union(T item1, T item2) {
         int root1 = findSet(item1);
         int root2 = findSet(item2);

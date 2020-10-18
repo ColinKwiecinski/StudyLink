@@ -1,6 +1,6 @@
-package disjointsets;
+package graphs;
 
-public class Edge {
+public class Edge implements Comparable{
 
     Vertex to;
     Vertex from;
@@ -34,6 +34,20 @@ public class Edge {
         }
         if(this.weight < other.getWeight()) {
             return -1;
+        }
+        return 0;
+    }
+
+    @Override
+    public int compareTo(Object other) {
+        if(other instanceof Edge) {
+            if (this.weight > ((Edge) other).weight) {
+                return 1;
+            }
+            if (this.weight < ((Edge) other).weight) {
+                return -1;
+            }
+            return 0;
         }
         return 0;
     }

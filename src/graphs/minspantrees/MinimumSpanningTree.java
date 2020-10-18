@@ -1,4 +1,4 @@
-package minspantrees;
+package graphs.minspantrees;
 
 import graphs.BaseEdge;
 

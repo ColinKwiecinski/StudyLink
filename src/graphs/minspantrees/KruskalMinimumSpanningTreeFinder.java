@@ -1,4 +1,4 @@
-package minspantrees;
+package graphs.minspantrees;
 
 import disjointsets.DisjointSets;
 import disjointsets.QuickFindDisjointSets;

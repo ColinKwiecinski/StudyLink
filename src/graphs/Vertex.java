@@ -1,4 +1,4 @@
-package disjointsets;
+package graphs;
 
 public class Vertex {
 

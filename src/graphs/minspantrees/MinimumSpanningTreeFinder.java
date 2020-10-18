@@ -1,4 +1,4 @@
-package minspantrees;
+package graphs.minspantrees;
 
 import graphs.BaseEdge;
 import graphs.Edge;
@@ -13,10 +13,10 @@ import graphs.Graph;
  */
 public interface MinimumSpanningTreeFinder<G extends Graph<V, E>, V, E extends BaseEdge<V, E>> {
     /**
-     * Computes a minimum spanning tree for given graph, and returns a minspantrees.MinimumSpanningTree object
+     * Computes a minimum spanning tree for given graph, and returns a graphs.minspantrees.MinimumSpanningTree object
      * that can be queried for its edges or total weight.
      *
-     * Alternatively, if no MST exists in the graph, the returned minspantrees.MinimumSpanningTree will have
+     * Alternatively, if no MST exists in the graph, the returned graphs.minspantrees.MinimumSpanningTree will have
      * {@link MinimumSpanningTree#exists()} false.
      */
     MinimumSpanningTree<V, E> findMinimumSpanningTree(G graph);

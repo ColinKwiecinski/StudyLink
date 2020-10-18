@@ -1,4 +1,7 @@
-package disjointsets;
+package graphs;
+
+import graphs.Edge;
+import graphs.Vertex;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +20,7 @@ public class CompatibilityGraph {
     }
 
     public Set<Edge> makeEdges() {
-        Set<Edge> result = new TreeSet<>();
+        Set<Edge> result = new HashSet<>();
         for(Vertex v : vertices) {
             int id1 = v.getId();
             Set<Vertex> visited = new HashSet<>();
@@ -36,6 +39,8 @@ public class CompatibilityGraph {
     public Set<Edge> getEdges() {
         return edges;
     }
+
+    public Set<Vertex> getVertices() {return vertices; }
 
     private int getCompatibility(int id1, int id2){
         //somehow search up values from sql database and then compare
